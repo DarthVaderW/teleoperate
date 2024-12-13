@@ -1,0 +1,1815 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="fdr_IMU_09052">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.092502 0.0022597 -0.074726"
+        rpy="0 0 0" />
+      <mass
+        value="8.4317" />
+      <inertia
+        ixx="0.013583"
+        ixy="5.901E-07"
+        ixz="-1.6434E-06"
+        iyy="0.018706"
+        iyz="4.5016E-06"
+        izz="0.017079" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.61961 0.58431 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="spine_yaw_link">
+    <inertial>
+      <origin
+        xyz="-0.0167642277988453 -4.83216550718556E-18 0.0179324427707128"
+        rpy="0 0 0" />
+      <mass
+        value="0.512724857423574" />
+      <inertia
+        ixx="0.000360333966793871"
+        ixy="1.99756294261622E-20"
+        ixz="7.95371033557421E-05"
+        iyy="0.000371991274463207"
+        iyz="2.65944667615078E-19"
+        izz="0.000485333353658816" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/spine_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/spine_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="spine_yaw_joint"
+    type="fixed">
+    <origin
+      xyz="-0.085746 0 0.033849"
+      rpy="0 0 3.14" />
+    <parent
+      link="base_link" />
+    <child
+      link="spine_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="spine_roll_link">
+    <inertial>
+      <origin
+        xyz="-4.20014467650276E-10 -1.98020443563714E-09 0.0234999981280513"
+        rpy="0 0 0" />
+      <mass
+        value="0.20322133284943" />
+      <inertia
+        ixx="3.82686783703292E-05"
+        ixy="-1.75031578316365E-12"
+        ixz="1.8338992610835E-12"
+        iyy="3.50959754846851E-05"
+        iyz="-7.31060579494829E-14"
+        izz="3.50959762951732E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/spine_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/spine_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="spine_roll_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0115 0 0.049"
+      rpy="3.14159265358979 -1.5707963267949 0" />
+    <parent
+      link="spine_yaw_link" />
+    <child
+      link="spine_roll_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10" />
+  </joint>
+  <link
+    name="spine_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.0390962896444022 0.153088838823938 -0.00764406602523993"
+        rpy="0 0 0" />
+      <mass
+        value="16.3609406297762" />
+      <inertia
+        ixx="0.0503402522830446"
+        ixy="0.00128746598277301"
+        ixz="-3.64123165929132E-05"
+        iyy="0.0251983730044507"
+        iyz="-6.86772878998939E-06"
+        izz="0.0452164860848158" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/spine_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/spine_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="spine_pitch_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0235"
+      rpy="1.5707963267949 1.5707963267949 0" />
+    <parent
+      link="spine_roll_link" />
+    <child
+      link="spine_pitch_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="right_shoulder_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.00726493672440402 0.0160210342146205 -0.0150718557979061"
+        rpy="0 0 0" />
+      <mass
+        value="0.150404179426623" />
+      <inertia
+        ixx="0.00016065911452015"
+        ixy="8.77761346033885E-07"
+        ixz="2.3872677972639E-05"
+        iyy="0.000116109794068915"
+        iyz="1.82052724463733E-05"
+        izz="0.000118562679048305" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_shoulder_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_shoulder_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.035 0.24912 0.14654"
+      rpy="2.9845 0 0" />
+    <parent
+      link="spine_pitch_link" />
+    <child
+      link="right_shoulder_pitch_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.5235987755982988"
+      upper="1.3089969389957472"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="right_shoulder_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.00528301339360848 -0.00391103253287475 0.0306824966505937"
+        rpy="0 0 0" />
+      <mass
+        value="0.824274203730424" />
+      <inertia
+        ixx="0.000413929187898958"
+        ixy="-4.36667084281768E-05"
+        ixz="-2.79690205937324E-06"
+        iyy="0.000495983312000307"
+        iyz="-2.26468871613379E-06"
+        izz="0.000519944040658844" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_shoulder_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.949019607843137 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_shoulder_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0.037 0 -0.0440000000000103"
+      rpy="1.5707963267949 0.157079632679465 -1.5707963267949" />
+    <parent
+      link="right_shoulder_pitch_link" />
+    <child
+      link="right_shoulder_roll_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.6981317007977318"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="right_shoulder_yaw_link">
+    <inertial>
+      <origin
+        xyz="0.00733976342836698 -2.93483492130597E-05 0.0561889030475278"
+        rpy="0 0 0" />
+      <mass
+        value="0.762217739018952" />
+      <inertia
+        ixx="0.000876116071853165"
+        ixy="5.15463344860439E-08"
+        ixz="-6.83621144019053E-05"
+        iyy="0.000878059400297853"
+        iyz="3.52958180892885E-07"
+        izz="0.000276787535326338" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_shoulder_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.949019607843137 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_shoulder_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0606 -0.04 0.037"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="right_shoulder_roll_link" />
+    <child
+      link="right_shoulder_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.2217304763960306"
+      upper="1.0471975511965976"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="right_elbow_link">
+    <inertial>
+      <origin
+        xyz="0.000277962560749325 0.00264568178866972 0.031936880067252"
+        rpy="0 0 0" />
+      <mass
+        value="0.627813247458869" />
+      <inertia
+        ixx="0.000302356374940733"
+        ixy="-2.95392965048702E-09"
+        ixz="6.15601022399525E-07"
+        iyy="0.000296795649661971"
+        iyz="9.79532669385132E-06"
+        izz="0.000237062043603817" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_elbow_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.949019607843137 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_elbow_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_elbow_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.0294 0.2144"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="right_shoulder_yaw_link" />
+    <child
+      link="right_elbow_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5707963267948966"
+      upper="0.17453292519943295"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="right_wrist_yaw_link">
+    <inertial>
+      <origin
+        xyz="-0.000242656820709049 8.32667268468867E-17 0.0258622047747572"
+        rpy="0 0 0" />
+      <mass
+        value="0.266822775800458" />
+      <inertia
+        ixx="7.74367014315816E-05"
+        ixy="-1.29474320794427E-21"
+        ixz="1.25125744566069E-06"
+        iyy="7.68686590797202E-05"
+        iyz="-1.04366370075862E-19"
+        izz="5.16776275688375E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_wrist_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.949019607843137 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_wrist_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.042 0.0294"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="right_elbow_link" />
+    <child
+      link="right_wrist_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="right_wrist_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.00291298270747151 -0.00237223155080904 0.0212206264270455"
+        rpy="0 0 0" />
+      <mass
+        value="0.276210246259396" />
+      <inertia
+        ixx="7.94967887501699E-05"
+        ixy="-5.19558029637707E-06"
+        ixz="5.19558219301222E-06"
+        iyy="8.27578232688135E-05"
+        iyz="2.81018255326507E-06"
+        izz="6.49063504688485E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_wrist_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.949019607843137 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_wrist_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0.024 0 0.0675"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="right_wrist_yaw_link" />
+    <child
+      link="right_wrist_roll_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="right_wrist_pitch_link">
+    <inertial>
+      <origin
+        xyz="-7.69785001439601E-10 -0.00525553432682421 0.0235450775997483"
+        rpy="0 0 0" />
+      <mass
+        value="0.309451429847079" />
+      <inertia
+        ixx="7.59405108715065E-05"
+        ixy="2.22661625566264E-12"
+        ixz="2.28931729492218E-12"
+        iyy="8.16300598612419E-05"
+        iyz="5.37008224611371E-07"
+        izz="5.82370720700534E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_wrist_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_wrist_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="-0.045 0.0227 0.024"
+      rpy="1.5707963267949 1.5707963267949 0" />
+    <parent
+      link="right_wrist_roll_link" />
+    <child
+      link="right_wrist_pitch_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="left_shoulder_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.00726263720510797 -0.0160426716485585 -0.0151508653822726"
+        rpy="0 0 0" />
+      <mass
+        value="0.150612198017708" />
+      <inertia
+        ixx="0.000161248575295525"
+        ixy="-8.87481553883276E-07"
+        ixz="2.39760430526512E-05"
+        iyy="0.000116670878127269"
+        iyz="-1.82773958434125E-05"
+        izz="0.000118642023449451" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_shoulder_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_shoulder_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.035 0.24909 -0.14634"
+      rpy="0.15708 0 0" />
+    <parent
+      link="spine_pitch_link" />
+    <child
+      link="left_shoulder_pitch_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.3089969389957472"
+      upper="0.5235987755982988"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="left_shoulder_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.00528301339357101 0.00422008160705353 0.0306824966506983"
+        rpy="0 0 0" />
+      <mass
+        value="0.824274203727834" />
+      <inertia
+        ixx="0.000413929187896465"
+        ixy="4.45257216793729E-05"
+        ixz="-2.79690205949292E-06"
+        iyy="0.000495983311989378"
+        iyz="-4.40399144249311E-06"
+        izz="0.000519944040645479" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_shoulder_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.949019607843137 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_shoulder_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0.037 0 -0.0441999999999534"
+      rpy="-1.5707963267949 0.157079632679465 1.5707963267949" />
+    <parent
+      link="left_shoulder_pitch_link" />
+    <child
+      link="left_shoulder_roll_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.6981317007977318"
+      upper="0"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="left_shoulder_yaw_link">
+    <inertial>
+      <origin
+        xyz="0.00733976343068545 -5.88472369134063E-06 0.056188903061288"
+        rpy="0 0 0" />
+      <mass
+        value="0.762217739339882" />
+      <inertia
+        ixx="0.000876116072763052"
+        ixy="-5.74541148921429E-08"
+        ixz="-6.83621146066282E-05"
+        iyy="0.000878059401242813"
+        iyz="-1.13865106166626E-06"
+        izz="0.000276787535412725" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_shoulder_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.949019607843137 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_shoulder_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0606 0.04 0.037"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="left_shoulder_roll_link" />
+    <child
+      link="left_shoulder_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.0471975511965976"
+      upper="1.2217304763960306"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="left_elbow_link">
+    <inertial>
+      <origin
+        xyz="0.000277962530646157 -0.00268845768241005 0.031936880067252"
+        rpy="0 0 0" />
+      <mass
+        value="0.627813247458869" />
+      <inertia
+        ixx="0.000302356374940733"
+        ixy="-2.95392965048745E-09"
+        ixz="6.15601219789649E-07"
+        iyy="0.000296795649661971"
+        iyz="-1.05810195799431E-05"
+        izz="0.000237062043603817" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_elbow_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.949019607843137 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_elbow_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_elbow_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.0294 0.2144"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="left_shoulder_yaw_link" />
+    <child
+      link="left_elbow_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.17453292519943295"
+      upper="1.5707963267948966"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="left_wrist_yaw_link">
+    <inertial>
+      <origin
+        xyz="-0.000242656820709049 -2.77555756156289E-17 0.0258622047747572"
+        rpy="0 0 0" />
+      <mass
+        value="0.266822775800458" />
+      <inertia
+        ixx="7.74367014315816E-05"
+        ixy="-1.26900503350933E-21"
+        ixz="1.25125744566069E-06"
+        iyy="7.68686590797202E-05"
+        iyz="-1.03811422205815E-19"
+        izz="5.16776275688375E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_wrist_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.949019607843137 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_wrist_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wrist_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.042 0.0294"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="left_elbow_link" />
+    <child
+      link="left_wrist_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="left_wrist_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.00271810662703392 0.00201201962004702 0.0211950607696797"
+        rpy="0 0 0" />
+      <mass
+        value="0.274346030030275" />
+      <inertia
+        ixx="7.76928649640188E-05"
+        ixy="4.43156185765288E-06"
+        ixz="4.43158664757676E-06"
+        iyy="8.10716974552498E-05"
+        iyz="-2.25195729341594E-06"
+        izz="6.3220240297169E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_wrist_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.949019607843137 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_wrist_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wrist_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0.0209 0 0.068"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="left_wrist_yaw_link" />
+    <child
+      link="left_wrist_roll_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="left_wrist_pitch_link">
+    <inertial>
+      <origin
+        xyz="7.69785000616429E-10 0.00525553432682421 0.0235450775997483"
+        rpy="0 0 0" />
+      <mass
+        value="0.309451429847079" />
+      <inertia
+        ixx="7.59405108715065E-05"
+        ixy="2.22661625620084E-12"
+        ixz="-2.28931728886267E-12"
+        iyy="8.16300598612419E-05"
+        iyz="-5.37008224611369E-07"
+        izz="5.82370720700534E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 3.1415926 3.1415926" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_wrist_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.949019607843137 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_wrist_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wrist_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="-0.044 -0.0258 0.0209"
+      rpy="1.5707963267949 1.5707963267949 0" />
+    <parent
+      link="left_wrist_roll_link" />
+    <child
+      link="left_wrist_pitch_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="right_hip_pitch_link">
+    <inertial>
+      <origin
+        xyz="1.9979E-06 0.010421 0.1331"
+        rpy="0 0 0" />
+      <mass
+        value="0.5141" />
+      <inertia
+        ixx="0.00090594"
+        ixy="2.0403E-12"
+        ixz="-4.2054E-11"
+        iyy="0.00079927"
+        iyz="-0.0002226"
+        izz="0.00091077" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_hip_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_hip_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_pitch_joint"
+    type="fixed">
+    <origin
+      xyz="-0.085746 -0.00014145 -0.066941"
+      rpy="3.1416 -1.0472 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_hip_pitch_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="right_hip_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.00351175904322644 0.00213825383844726 -0.121236758329289"
+        rpy="0 0 0" />
+      <mass
+        value="1.3693319701148" />
+      <inertia
+        ixx="0.00136647356229456"
+        ixy="-7.07413791120472E-05"
+        ixz="7.73700487142666E-07"
+        iyy="0.00128359378282527"
+        iyz="-1.35246498516851E-07"
+        izz="0.00168282060523097" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_hip_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.666666666666667 0.666666666666667 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_hip_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_roll_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.0579 0.168423465395998"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="right_hip_pitch_link" />
+    <child
+      link="right_hip_roll_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="right_thigh_link">
+    <inertial>
+      <origin
+        xyz="-0.00325509982000108 0.000554462939853769 0.184479345085281"
+        rpy="0 0 0" />
+      <mass
+        value="5.06687606257514" />
+      <inertia
+        ixx="0.0193770781551915"
+        ixy="-1.06983102465003E-05"
+        ixz="0.000232233857347913"
+        iyy="0.014666629196614"
+        iyz="2.93038014571072E-06"
+        izz="0.00626275211933568" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_thigh_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.807843137254902 0.498039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_thigh_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_yaw_joint"
+    type="fixed">
+    <origin
+      xyz="0.0303974916729123 -0.017549999999864 -0.0578999999999063"
+      rpy="1.57079632679486 0 -2.09439510239318" />
+    <parent
+      link="right_hip_roll_link" />
+    <child
+      link="right_thigh_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="right_calf_link">
+    <inertial>
+      <origin
+        xyz="-0.00841174675975504 0.147996987926378 0.00106255817030168"
+        rpy="0 0 0" />
+      <mass
+        value="3.12967605879538" />
+      <inertia
+        ixx="0.022624582237862"
+        ixy="-0.00116790580119756"
+        ixz="3.83913303868965E-06"
+        iyy="0.00168350798595526"
+        iyz="-2.0104152841762E-05"
+        izz="0.0238178079867671" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_calf_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_calf_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_knee_joint"
+    type="fixed">
+    <origin
+      xyz="0.0100000000001472 -0.00200000000011069 0.4151"
+      rpy="1.57079632679487 0 1.5707963267949" />
+    <parent
+      link="right_thigh_link" />
+    <child
+      link="right_calf_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="1.3"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="right_foot_pitch_link">
+    <inertial>
+      <origin
+        xyz="3.96600086105536E-10 -1.76759378835156E-09 -1.86981466421265E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.215219076635413" />
+      <inertia
+        ixx="3.91098961957665E-05"
+        ixy="-1.8338992491678E-12"
+        ixz="1.7503157832983E-12"
+        iyy="3.5669798840359E-05"
+        iyz="-7.31060646509625E-14"
+        izz="3.56643107217185E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_foot_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_foot_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_foot_pitch_joint"
+    type="fixed">
+    <origin
+      xyz="0.017 0.37 0"
+      rpy="0 0 1.57079632679489" />
+    <parent
+      link="right_calf_link" />
+    <child
+      link="right_foot_pitch_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="right_foot_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.0479638882923885 3.15592821208133E-05 0.0470546297177579"
+        rpy="0 0 0" />
+      <mass
+        value="0.961122274283929" />
+      <inertia
+        ixx="0.000891083370931844"
+        ixy="1.62771994305138E-07"
+        ixz="-1.13606112529343E-05"
+        iyy="0.000859378855715806"
+        iyz="-5.82790783736439E-08"
+        izz="0.000280872132928205" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_foot_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/right_foot_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_foot_roll_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.0307 0"
+      rpy="1.57079632679489 0 -3.14159265358979" />
+    <parent
+      link="right_foot_pitch_link" />
+    <child
+      link="right_foot_roll_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="left_hip_pitch_link">
+    <inertial>
+      <origin
+        xyz="-0.010421 -1.1502E-08 0.10267"
+        rpy="0 0 0" />
+      <mass
+        value="0.5141" />
+      <inertia
+        ixx="0.00079927"
+        ixy="1.082E-11"
+        ixz="0.0002226"
+        iyy="0.00090594"
+        iyz="-1.0485E-10"
+        izz="0.00091077" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_hip_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_hip_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_pitch_joint"
+    type="fixed">
+    <origin
+      xyz="-0.085746 0.026487 -0.082151"
+      rpy="-2.0944 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_hip_pitch_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="left_hip_roll_link">
+    <inertial>
+      <origin
+        xyz="9.59026264895357E-05 -0.00411039946413077 0.121236758328767"
+        rpy="0 0 0" />
+      <mass
+        value="1.3693319700924" />
+      <inertia
+        ixx="0.00124304989640137"
+        ixy="5.1730783218274E-07"
+        ixz="-2.69723344613889E-07"
+        iyy="0.00140701744876873"
+        iyz="-7.37667526069543E-07"
+        izz="0.00168282060528281" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_hip_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.666666666666667 0.666666666666667 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_hip_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_roll_joint"
+    type="fixed">
+    <origin
+      xyz="0.0579 0 0.138"
+      rpy="-1.5708 1.0472 1.5708" />
+    <parent
+      link="left_hip_pitch_link" />
+    <child
+      link="left_hip_roll_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="left_thigh_link">
+    <inertial>
+      <origin
+        xyz="0.000527688840145481 0.000132907762216361 0.193722931737544"
+        rpy="0 0 0" />
+      <mass
+        value="5.56900997086736" />
+      <inertia
+        ixx="0.0179737904529975"
+        ixy="-1.23470501294547E-05"
+        ixz="6.78446917774559E-05"
+        iyy="0.0226993418189507"
+        iyz="0.000236563035762916"
+        izz="0.00628200689858618" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_thigh_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.807843137254902 0.498039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_thigh_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_yaw_joint"
+    type="fixed">
+    <origin
+      xyz="0 0.0351 0.0579000000000937"
+      rpy="1.57079632679487 1.5707963267949 0" />
+    <parent
+      link="left_hip_roll_link" />
+    <child
+      link="left_thigh_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="left_calf_link">
+    <inertial>
+      <origin
+        xyz="-0.0113614075272383 -0.153796195730997 0.0275168043767554"
+        rpy="0 0 0" />
+      <mass
+        value="3.08111540544371" />
+      <inertia
+        ixx="0.0226199080419268"
+        ixy="0.00116789922794549"
+        ixz="3.74691553397954E-06"
+        iyy="0.00167917593121502"
+        iyz="1.93049737072618E-05"
+        izz="0.0238096426576811" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_calf_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_calf_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_knee_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.0199999999998528 0.4151"
+      rpy="-1.57079632679487 0 0" />
+    <parent
+      link="left_thigh_link" />
+    <child
+      link="left_calf_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.3"
+      upper="0"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="left_foot_pitch_link">
+    <inertial>
+      <origin
+        xyz="1.76759380396407E-09 -3.96600530194746E-10 0.0307000018698146"
+        rpy="0 0 0" />
+      <mass
+        value="0.215219076635413" />
+      <inertia
+        ixx="3.56697988403589E-05"
+        ixy="-1.83389925914762E-12"
+        ixz="-7.31060688584059E-14"
+        iyy="3.91098961957665E-05"
+        iyz="1.75031578204807E-12"
+        izz="3.56643107217185E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_foot_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_foot_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_foot_pitch_joint"
+    type="fixed">
+    <origin
+      xyz="0.015 -0.37 -0.000700000000000006"
+      rpy="0 0 0" />
+    <parent
+      link="left_calf_link" />
+    <child
+      link="left_foot_pitch_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+  <link
+    name="left_foot_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.0479638882923891 3.1559282120841E-05 0.0470546297177579"
+        rpy="0 0 0" />
+      <mass
+        value="0.96112227428393" />
+      <inertia
+        ixx="0.000891083370931844"
+        ixy="1.62771994305179E-07"
+        ixz="-1.13606112529343E-05"
+        iyy="0.000859378855715806"
+        iyz="-5.82790783735542E-08"
+        izz="0.000280872132928205" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_foot_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fdr_IMU_09052/meshes/left_foot_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_foot_roll_joint"
+    type="fixed">
+    <origin
+      xyz="0.0307 0 0.0307"
+      rpy="-1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="left_foot_pitch_link" />
+    <child
+      link="left_foot_roll_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="10"
+      friction="0" />
+  </joint>
+</robot>
