@@ -12,4 +12,4 @@ class Angle_38(IdlStruct, typename="angle38"):
 
 @dataclass
 class Angle_14(IdlStruct, typename="angle14"):
-    data: array[float, 38]
+    data: array[float, 14]
