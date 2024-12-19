@@ -100,6 +100,22 @@ for i in range(num_envs):
 
     # set default DOF positions
     gym.set_actor_dof_states(env, actor_handle, dof_states, gymapi.STATE_ALL)
+
+    # table
+    pose = gymapi.Transform()
+    pose.p = gymapi.Vec3(0.6, 0, 1.2)
+    pose.r = gymapi.Quat(0, 0, 0, 1)
+    table_handle = gym.create_actor(env, table_asset, pose, 'table', 1)
+    color = gymapi.Vec3(0.5, 0.5, 0.5)
+    gym.set_rigid_body_color(env, table_handle, 0, gymapi.MESH_VISUAL_AND_COLLISION, color)
+
+    # cube
+    pose = gymapi.Transform()
+    pose.p = gymapi.Vec3(0.5, 0, 1.25)
+    pose.r = gymapi.Quat(0, 0, 0, 1)
+    cube_handle = gym.create_actor(env, cube_asset, pose, 'cube', 1)
+    color = gymapi.Vec3(1, 0.5, 0.5)
+    gym.set_rigid_body_color(env, cube_handle, 0, gymapi.MESH_VISUAL_AND_COLLISION, color)
     
 # create viewer
 viewer = gym.create_viewer(sim, gymapi.CameraProperties())
